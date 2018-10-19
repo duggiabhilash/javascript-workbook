@@ -1,3 +1,4 @@
+
 // Write a JavaScript program to display the current day and time.
 
 const currentDayandTime =()=> {
@@ -13,7 +14,7 @@ const seconds = currentDate.getSeconds();
 
 const time = currentDate.getUTCDate();
 
-return(month + "/" + day + "/" + year + "   " + "Time:" + hours +":" + minutes +":" + seconds );
+return month + "/" + day + "/" + year + "   " + "Time:" + hours +":" + minutes +":" + seconds ;
 }
 
 console.log(currentDayandTime());
@@ -24,7 +25,7 @@ console.log(currentDayandTime());
 const numbertoString = (num1) => {
   const s = num1.toString();
 
-  return(s);
+  return s;
 }
 
 console.log(numbertoString(15));
@@ -34,7 +35,7 @@ console.log(numbertoString(15));
 const stringtoNumber = (s1) => {
   const s2 = parseInt(s1);
 
-  return(s2);
+  return s2;
 }
 
 console.log(stringtoNumber('44.hello'));
@@ -48,15 +49,11 @@ NaN
 String
 */
 
-const dateTypes =() => { 
-  const s = 'thisisstring';
-  const b = true;
-  const n = 15;
-  const noValue = null;
-  return(typeof b); 
+const dateTypes =(str1) => { 
+  return(typeof str1); 
 }
 
-console.log(dateTypes());
+console.log(dateTypes(true));
 
 
 // Write a JavaScript program that adds 2 numbers together.
@@ -70,7 +67,7 @@ const sumOfTwoNumbers = (num1, num2) => {
 // Write a JavaScript program that runs only when 2 things are true.
 
 const twoThingsareTrue = (num1, num2) => {
-  if(num1 === num2) {
+  if(num1 && num2) {
     return("Two things are equal");
   }
 }
@@ -80,7 +77,7 @@ console.log(twoThingsareTrue(2,2));
 // Write a JavaScript program that runs when 1 of 2 things are true
 
 const oneof2thingsareTrue = (num1, num2) => {
-  if(num1 || num2 != NaN) {
+  if(num1 || num2) {
     return("One of two things are true");
   }
 }
@@ -90,8 +87,10 @@ console.log(oneof2thingsareTrue(2,null));
 // Write a JavaScript program that runs when both things are not true.
 
 const twoThingsareNotTrue = (num1, num2) => {
-  if(num1 != num2) {
-    return("Two things are not equal");
+  num1 = false;
+  num2 = undefined;
+  if(!num1 && !num2) {
+    return("Two things are falsy");
   }
 }
 
