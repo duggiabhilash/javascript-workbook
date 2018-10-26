@@ -15,9 +15,7 @@ function pigLatin(word) {
   let newArrayStartingwithVowel = [];
   let newArrayBeforeVowel = [];
   if(checkifVowel(userInputSplit[0])) {
-    userInputSplit.push('y');
-    userInputSplit.push('a');
-    userInputSplit.push('y');
+    userInputSplit.push('yay');
     return console.log(userInputSplit.join(""));
   }
   else {
@@ -34,8 +32,7 @@ function pigLatin(word) {
     return console.log(word + " is not having any vowel");
 
     let finalarray = newArrayStartingwithVowel.concat(newArrayBeforeVowel);
-    finalarray.push('a');
-    finalarray.push('y');
+    finalarray.push('ay');
     return console.log(finalarray.join(""));
   }
   
