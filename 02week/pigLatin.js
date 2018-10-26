@@ -88,7 +88,7 @@ if (typeof describe === 'function') {
       assert.equal(pigLatin('valley'), 'alleyvay');
     });
     it('should attach "yay" if word begins with vowel', () => {
-      assert.equal(pigLatin('egg'), 'eggyay');
+      assert.equal(pigLatin('eggs'), 'eggyay');
       assert.equal(pigLatin('emission'), 'emissionyay');
     });
     it('should lowercase and trim word before translation', () => {
