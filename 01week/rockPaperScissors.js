@@ -7,10 +7,59 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+/*
+hand 1 enters rock
+hand 2 enters paper
+convert the upper case to lower case 
+validate if move is a valid input
+check for valid input if the input is any of the following rock, paper or scissors
+if any of the user input is not valid print in console with incorrect input, user name
+if the input from the users is valid, we compare the user input 
+if(hand 1 is rock and hand 2 is scissors) - hand 1 wins
+if(hand 1 is rock and hand 2 is paper) - hand 2 wins
+if(hand 1 is rock and hand 2 is rock) - it's a tie
+if(hand 1 is paper and hand 2 is scissors) - hand 2 wins
+if(hand 1 is paper and hand 2 is paper) - it's a tie
+if(hand 1 is paper and hand 2 is rock) - hand 1 wins
+if(hand 1 is scissors and hand 2 is paper) - hand 1 wins 
+if(hand 1 is scissors and hand 2 is rock) - hand 2 wins
+if(hand 1 is scissors and hand 2 is scissors) - it's a tie
+*/
+
 
 function rockPaperScissors(hand1, hand2) {
 
-  // Write code here
+  getPrompt();
+
+  hand1 = hand1.toLowerCase();
+  hand2 = hand2.toLowerCase();
+
+  if((hand1 == "rock" || hand1 == "scissors" || hand1 == "paper") && (hand2 == "rock" || hand2 == "scissors" || hand2 == "paper")) {
+    if((hand1 == "rock") && (hand2 == "scissors"))
+      console.log("Hand one wins!");
+    else if((hand1 == "rock") && (hand2 == "paper"))
+      console.log("Hand two wins!");
+    else if((hand1 == "rock") && (hand2 == "rock"))
+      console.log("It's a tie!");
+    else if((hand1 == "paper") && (hand2 == "scissors"))
+      console.log("Hand two wins!");
+    else if((hand1 == "paper") && (hand2 == "paper"))
+      console.log("It's a tie!");
+    else if((hand1 == "paper") && (hand2 == "rock"))
+      console.log("Hand one wins!");
+    else if((hand1 == "scissors") && (hand2 == "paper"))
+      console.log("Hand one wins!");
+    else if((hand1 == "scissors") && (hand2 == "rock"))
+      console.log("Hand two wins!");
+    else if((hand1 == "scissors") && (hand2 == "scissors"))
+      console.log("It's a tie!");
+  }
+  else {
+    console.log("invalid input");
+  }
+  
+
+  
 
 }
 
@@ -40,7 +89,7 @@ if (typeof describe === 'function') {
     });
     it('should scrub input to ensure lowercase with "trim"ed whitepace', () => {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
-      assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
+      assert.equal(rockPaperScissors('Paper', 'SCISSorS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
   });
